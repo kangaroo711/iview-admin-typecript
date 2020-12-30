@@ -14,7 +14,8 @@ module.exports = {
       }
     ],
     "vue/no-deprecated-slot-attribute": 0,
-    "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
+    "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }],
+    "max-params": [0,5]
   },
 
   parserOptions: {
