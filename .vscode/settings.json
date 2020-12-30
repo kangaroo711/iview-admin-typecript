@@ -1,0 +1,21 @@
+{
+  // "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": false, // 文件末尾另起一行
+  "files.trimTrailingWhitespace": true, // 剪裁尾部空格
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+
+   // eslint 配置
+   "javascript.validate.enable": false, // 关闭编辑器自带的 js 检查，建议关闭
+   "editor.codeActionsOnSave": {
+       "source.organizeImports": false, // 在保存时自动排序和补全import
+       "source.fixAll.eslint": true // 在保存时自动修复错误
+   },
+   "eslint.validate": [
+       // 配置 ESLint 检查的文件类型，这个配置包括 .js, .jsx, .html, .vue
+       "javascript",
+       "javascriptreact",
+       "html",
+       "vue"
+   ],
+}
