@@ -1,4 +1,4 @@
-import Main from '@/components/main'
+import Main from "@/components/main";
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -18,18 +18,18 @@ import Main from '@/components/main'
 
 export default [
   {
-    path: '/login',
-    name: 'login',
+    path: "/login",
+    name: "login",
     meta: {
-      title: 'Login - 登录',
+      title: "Login - 登录",
       hideInMenu: true
     },
-    component: () => import('@/view/login/login.vue')
+    component: () => import("@/view/login/login.vue")
   },
   {
-    path: '/',
-    name: '_home',
-    redirect: 'info_manage/invoice_order_list',
+    path: "/",
+    name: "_home",
+    redirect: "info-manage/invoice-order-list",
     component: Main,
     meta: {
       hideInMenu: true,
@@ -37,104 +37,121 @@ export default [
     },
     children: [
       {
-        path: '/home',
-        name: 'home',
+        path: "/home",
+        name: "home",
         meta: {
           hideInMenu: true,
-          title: '首页',
+          title: "首页",
           notCache: true,
-          icon: 'md-home'
+          icon: "md-home"
         },
-        component: () => import('@/view/home/home.vue')
+        component: () => import("@/view/home/home.vue")
       }
     ]
   },
   {
-    path: '/info_manage',
-    name: 'info_manage',
+    path: "/info-manage",
+    name: "info-manage",
     meta: {
-      icon: 'logo-buffer',
-      title: '信息管理'
+      icon: "logo-buffer",
+      title: "信息管理"
     },
     component: Main,
     children: [
       {
-        path: 'invoice_order_list',
-        name: 'invoice_order_list',
+        path: "invoice-order-list",
+        name: "invoice-order-list",
         meta: {
-          title: '开票订单列表'
+          title: "开票订单列表"
         },
         component: () =>
-          import('@/view/info-manage/invoice-order-list/invoice-order-list.vue')
+          import(
+            "@/view/info-manage/invoice-order-list/invoice-order-list.vue"
+          ),
+        // children: [
+        //   {
+        //     path: "detail",
+        //     name: "detail",
+        //     meta: {
+        //       title: "开票详情"
+        //     },
+        //     component: () =>
+        //       import(
+        //         "@/view/info-manage/invoice-order-list/invoice-order-list.vue"
+        //       )
+        //   }
+        // ]
       },
       {
-        path: 'invoice_destroy_manage',
-        name: 'invoice_destroy_manage',
-        meta: { title: '销方信息管理' },
+        path: "invoice-destroy-manage",
+        name: "invoice-destroy-manage",
+        meta: { title: "销方信息管理" },
         component: () =>
           import(
-            '@/view/info-manage/invoice-destroy-manage/invoice-destroy-manage.vue'
+            "@/view/info-manage/invoice-destroy-manage/invoice-destroy-manage.vue"
           )
       }
-      // {path: 'invoice_info_manage', name: 'invoice_info_manage', meta:{title: '发票信息管理'},component: () => import('@/view/info-manage/invoice-info-manage/invoice-info-manage.vue')},
-      // {path: 'invoice_type_manage', name: 'invoice_type_manage', meta:{title: '发票分类管理'},component: () => import('@/view/info-manage/invoice-type-manage/invoice-type-manage.vue')},
-      // {path: 'invoice_title_manage', name: 'invoice_title_manage', meta:{title: '开票抬头管理'},component: () => import('@/view/info-manage/invoice-title-manage/invoice-title-manage.vue')}
+      // {path: 'invoice-info-manage', name: 'invoice-info-manage', meta:{title: '发票信息管理'},component: () => import('@/view/info-manage/invoice-info-manage/invoice-info-manage.vue')},
+      // {path: 'invoice-type-manage', name: 'invoice-type-manage', meta:{title: '发票分类管理'},component: () => import('@/view/info-manage/invoice-type-manage/invoice-type-manage.vue')},
+      // {path: 'invoice-title-manage', name: 'invoice-title-manage', meta:{title: '开票抬头管理'},component: () => import('@/view/info-manage/invoice-title-manage/invoice-title-manage.vue')}
     ]
   },
   {
-    path: '/operate_serve_manage',
-    name: 'operate_serve_manage',
+    path: "/operate-serve-manage",
+    name: "operate-serve-manage",
     meta: {
-      icon: 'ios-hammer',
-      title: '运营服务器管理'
+      icon: "ios-hammer",
+      title: "运营服务器管理"
     },
     component: Main,
     children: [
       {
-        path: 'invoice_system_board',
-        name: 'invoice_system_board',
+        path: "invoice-system-board",
+        name: "invoice-system-board",
         meta: {
-          title: '开票系统看板',
-          beforeCloseName: 'before_close_normal'
+          title: "开票系统看板"
+          // beforeCloseName: "before_close_normal"
         },
         component: () =>
           import(
-            '@/view/operate-serve-manage/invoice-system-board/invoice-system-board.vue'
+            "@/view/operate-serve-manage/invoice-system-board/invoice-system-board.vue"
           )
       },
       {
-        path: 'tax_control_manage',
-        name: 'tax_control_manage',
-        meta: { title: '税控盘管理' },
+        path: "tax-control-manage",
+        name: "tax-control-manage",
+        meta: { title: "税控盘管理" },
         component: () =>
-          import('@/view/operate-serve-manage/tax-control-manage/tax-control-manage.vue')
+          import(
+            "@/view/operate-serve-manage/tax-control-manage/tax-control-manage.vue"
+          )
       }
-      // {path: 'data_statistic_report', name: 'data_statistic_report', meta:{title: '数据统计报表'},component: () => import('@/view/operate-serve-manage/data-statistic-report/data-statistic-report.vue')},
-      // {path: 'hong_chong_manage', name: 'hong_chong_manage', meta:{title: '红冲管理'},component: () => import('@/view/operate-serve-manage/hong_chong_manage/hong_chong_manage.vue')},
+      // {path: 'data-statistic-report', name: 'data-statistic-report', meta:{title: '数据统计报表'},component: () => import('@/view/operate-serve-manage/data-statistic-report/data-statistic-report.vue')},
+      // {path: 'hong-chong-manage', name: 'hong-chong-manage', meta:{title: '红冲管理'},component: () => import('@/view/operate-serve-manage/hong-chong-manage/hong-chong-manage.vue')},
     ]
   },
   {
-    path: '/401',
-    name: 'error_401',
+    path: "/401",
+    name: "error_401",
     meta: {
       hideInMenu: true
     },
-    component: () => import('@/view/error-page/401.vue')
+    component: () => import("@/view/error-page/401.vue")
   },
   {
-    path: '/500',
-    name: 'error_500',
+    path: "/500",
+    name: "error_500",
     meta: {
       hideInMenu: true
     },
-    component: () => import('@/view/error-page/500.vue')
+    component: () => import("@/view/error-page/500.vue")
   },
   {
-    path: '*',
-    name: 'error_404',
+    path: "*",
+    name: "error_404",
     meta: {
       hideInMenu: true
     },
-    component: () => import('@/view/error-page/404.vue')
+    component: () => import("@/view/error-page/404.vue")
   }
-]
+];

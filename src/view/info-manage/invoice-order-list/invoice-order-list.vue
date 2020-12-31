@@ -3,14 +3,20 @@
   <div class="invoice-order-list">invoice-order-list组件测试</div>
 </template>
 
-<script lang="ts">
+<script>
 // import './invoice-order-list.less'
-import Vue from 'vue'
-import Component from 'vue-class-component'
 
-@Component
-export default class InvoiceOrderList extends Vue {
-  // Declared as component data
-  message = 'Hello World!'
+export default {
+  name: 'InvoiceOrderList',
+  components: {},
+  props: {},
+  data () {
+    return {}
+  },
+  // 生命周期 - 创建完成（访问当前this实例）
+  created () {},
+  // 生命周期 - 挂载完成（访问DOM元素）
+  mounted () {},
+  methods: {}
 }
 </script>
