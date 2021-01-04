@@ -1,6 +1,6 @@
 // HTML如果要忽略使用 <!-- eslint-disable-next-line -->
 module.exports = {
-  extends: ["alloy", "alloy/vue", "@vue/typescript"],
+  extends: ["alloy", "alloy/vue", "@vue/typescript",],
 
   globals: {
     Vue: false
@@ -22,3 +22,5 @@ module.exports = {
     parser: "@typescript-eslint/parser"
   }
 };
+
+
