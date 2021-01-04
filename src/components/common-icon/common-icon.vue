@@ -1,11 +1,7 @@
-<template>
-  <component :is="iconType" :type="iconName" :color="iconColor" :size="iconSize"/>
-</template>
-
 <script>
-import Icons from '_c/icons'
+import Icons from "_c/icons";
 export default {
-  name: 'CommonIcon',
+  name: "CommonIcon",
   components: { Icons },
   props: {
     type: {
@@ -16,27 +12,38 @@ export default {
     size: Number
   },
   computed: {
-    iconType () {
-      return this.type.indexOf('_') === 0 ? 'Icons' : 'Icon'
+    iconType() {
+      return this.type.indexOf("_") === 0 ? "Icons" : "Icon";
     },
-    iconName () {
-      return this.iconType === 'Icons' ? this.getCustomIconName(this.type) : this.type
+    iconName() {
+      return this.iconType === "Icons"
+        ? this.getCustomIconName(this.type)
+        : this.type;
     },
-    iconSize () {
-      return this.size || (this.iconType === 'Icons' ? 12 : undefined)
+    iconSize() {
+      return this.size || (this.iconType === "Icons" ? 12 : undefined);
     },
-    iconColor () {
-      return this.color || ''
+    iconColor() {
+      return this.color || "";
     }
   },
   methods: {
-    getCustomIconName (iconName) {
-      return iconName.slice(1)
+    getCustomIconName(iconName) {
+      return iconName.slice(1);
     }
   }
-}
+};
 </script>
 
-<style>
+<template>
+  <component
+    :is="iconType"
+    :type="iconName"
+    :color="iconColor"
+    :size="iconSize"
+  />
+</template>
 
-</style>
+
+
+<style></style>

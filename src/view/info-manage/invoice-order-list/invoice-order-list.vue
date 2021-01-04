@@ -1,22 +1,31 @@
 <!-- 信息管理-开票订单列表 -->
-<template>
-  <div class="invoice-order-list">invoice-order-list组件测试</div>
-</template>
-
 <script>
 // import './invoice-order-list.less'
-
+const Detail = () => import("./components/detail");
 export default {
-  name: 'InvoiceOrderList',
-  components: {},
-  props: {},
-  data () {
-    return {}
+  name: "InvoiceOrderList",
+  components: {
+    Detail
   },
-  // 生命周期 - 创建完成（访问当前this实例）
-  created () {},
-  // 生命周期 - 挂载完成（访问DOM元素）
-  mounted () {},
-  methods: {}
-}
+  props: {},
+  data() {
+    return {
+      show: false
+    };
+  },
+  methods: {
+    ss() {
+      this.show = true;
+    }
+  }
+};
 </script>
+
+<template>
+  <div class="invoice-order-list">
+    invoice-order-list组件测试
+    <button @click="ss">123</button>
+    <Detail v-if="show"></Detail>
+  </div>
+</template>
+

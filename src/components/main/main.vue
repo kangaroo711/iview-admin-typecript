@@ -1,58 +1,3 @@
-<template>
-  <Layout style="height: 100%" class="main">
-    <Sider
-      v-model="collapsed"
-      hide-trigger
-      collapsible
-      :width="256"
-      :collapsed-width="64"
-      class="left-sider"
-      :style="{ overflow: 'hidden' }"
-    >
-      <side-menu
-        ref="sideMenu"
-        accordion
-        :active-name="$route.name"
-        :collapsed="collapsed"
-        :menu-list="menuList"
-        @on-select="turnToPage"
-      >
-        <!-- 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 -->
-        <div class="logo-con">
-          <img v-show="!collapsed" key="max-logo" :src="maxLogo" />
-          <img v-show="collapsed" key="min-logo" :src="minLogo" />
-        </div>
-      </side-menu>
-    </Sider>
-    <Layout>
-      <Header class="header-con">
-        <header-bar
-          :collapsed="collapsed"
-          @on-coll-change="handleCollapsedChange"
-        >
-          <user :message-unread-count="unreadCount" :user-avatar="userAvatar" />
-        </header-bar>
-      </Header>
-      <Content class="main-content-con">
-        <Layout class="main-layout-con">
-          <div class="tag-nav-wrapper">
-            <tags-nav
-              :value="$route"
-              :list="tagNavList"
-              @input="handleClick"
-              @on-close="handleCloseTag"
-            />
-          </div>
-          <Content class="content-wrapper">
-            <keep-alive :include="cacheList">
-              <router-view />
-            </keep-alive>
-          </Content>
-        </Layout>
-      </Content>
-    </Layout>
-  </Layout>
-</template>
 <script>
 import SideMenu from "./components/side-menu";
 import HeaderBar from "./components/header-bar";
@@ -192,3 +137,59 @@ export default {
   }
 };
 </script>
+
+<template>
+  <Layout style="height: 100%" class="main">
+    <Sider
+      v-model="collapsed"
+      hide-trigger
+      collapsible
+      :width="256"
+      :collapsed-width="64"
+      class="left-sider"
+      :style="{ overflow: 'hidden' }"
+    >
+      <side-menu
+        ref="sideMenu"
+        accordion
+        :active-name="$route.name"
+        :collapsed="collapsed"
+        :menu-list="menuList"
+        @on-select="turnToPage"
+      >
+        <!-- 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 -->
+        <div class="logo-con">
+          <img v-show="!collapsed" key="max-logo" :src="maxLogo" />
+          <img v-show="collapsed" key="min-logo" :src="minLogo" />
+        </div>
+      </side-menu>
+    </Sider>
+    <Layout>
+      <Header class="header-con">
+        <header-bar
+          :collapsed="collapsed"
+          @on-coll-change="handleCollapsedChange"
+        >
+          <user :message-unread-count="unreadCount" :user-avatar="userAvatar" />
+        </header-bar>
+      </Header>
+      <Content class="main-content-con">
+        <Layout class="main-layout-con">
+          <div class="tag-nav-wrapper">
+            <tags-nav
+              :value="$route"
+              :list="tagNavList"
+              @input="handleClick"
+              @on-close="handleCloseTag"
+            />
+          </div>
+          <Content class="content-wrapper">
+            <keep-alive :include="cacheList">
+              <router-view />
+            </keep-alive>
+          </Content>
+        </Layout>
+      </Content>
+    </Layout>
+  </Layout>
+</template>

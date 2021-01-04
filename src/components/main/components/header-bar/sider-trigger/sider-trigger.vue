@@ -1,6 +1,3 @@
-<template>
-  <a type="text" :class="['sider-trigger-a', collapsed ? 'collapsed' : '']" @click="handleChange"><Icon :type="icon" :size="size" /></a>
-</template>
 <script>
 export default {
   name: 'SiderTrigger',
@@ -22,6 +19,11 @@ export default {
   }
 }
 </script>
+
+<template>
+  <a type="text" :class="['sider-trigger-a', collapsed ? 'collapsed' : '']" @click="handleChange"><Icon :type="icon" :size="size" /></a>
+</template>
+
 <style lang="less">
 @import './sider-trigger.less';
 </style>

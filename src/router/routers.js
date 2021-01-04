@@ -68,19 +68,6 @@ export default [
           import(
             "@/view/info-manage/invoice-order-list/invoice-order-list.vue"
           ),
-        // children: [
-        //   {
-        //     path: "detail",
-        //     name: "detail",
-        //     meta: {
-        //       title: "开票详情"
-        //     },
-        //     component: () =>
-        //       import(
-        //         "@/view/info-manage/invoice-order-list/invoice-order-list.vue"
-        //       )
-        //   }
-        // ]
       },
       {
         path: "invoice-destroy-manage",

@@ -7,12 +7,12 @@ module.exports = {
   },
 
   rules: {
-    "vue/component-tags-order": [
-      2,
-      {
-        order: ["template", "script", "style"]
-      }
-    ],
+    // "vue/component-tags-order": [
+    //   2,
+    //   {
+    //     order: ["template", "script", "style"]
+    //   }
+    // ],
     "vue/no-deprecated-slot-attribute": 0,
     "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }],
     "max-params": [0,5]
