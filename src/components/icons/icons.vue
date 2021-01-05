@@ -1,10 +1,6 @@
-<template>
-  <i :class="`iconfont icon-${type}`" :style="styles"></i>
-</template>
-
 <script>
 export default {
-  name: 'Icons',
+  name: "Icons",
   props: {
     type: {
       type: String,
@@ -12,7 +8,7 @@ export default {
     },
     color: {
       type: String,
-      default: '#5c6b77'
+      default: "#5c6b77"
     },
     size: {
       type: Number,
@@ -20,16 +16,16 @@ export default {
     }
   },
   computed: {
-    styles () {
+    styles() {
       return {
         fontSize: `${this.size}px`,
         color: this.color
-      }
+      };
     }
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<template>
+  <i :class="`iconfont icon-${type}`" :style="styles"></i>
+</template>

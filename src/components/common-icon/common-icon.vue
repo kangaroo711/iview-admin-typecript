@@ -43,7 +43,3 @@ export default {
     :size="iconSize"
   />
 </template>
-
-
-
-<style></style>
